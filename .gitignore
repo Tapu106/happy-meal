@@ -1,0 +1,56 @@
+# =========================
+# Build artifacts
+# =========================
+bootstrap
+*.zip
+/bin/
+/dist/
+
+# =========================
+# Go binaries
+# =========================
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+debug
+
+# =========================
+# Go test cache and coverage
+# =========================
+*.test
+*.cover
+*.out
+coverage.*
+
+# =========================
+# Go vendor directory (if used)
+/vendor/
+
+# =========================
+# Serverless
+# =========================
+.serverless/
+
+# =========================
+# Node (for serverless plugins)
+# =========================
+node_modules
+
+# =========================
+# IDE and Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.*
+!.env.example

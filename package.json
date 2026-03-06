@@ -1,0 +1,23 @@
+{
+  "name": "storylens-banglapaper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/footylight/storylens-banglapaper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/footylight/storylens-banglapaper/issues"
+  },
+  "homepage": "https://github.com/footylight/storylens-banglapaper#readme",
+  "description": "",
+  "devDependencies": {
+    "serverless-dotenv-plugin": "^6.0.0"
+  }
+}

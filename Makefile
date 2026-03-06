@@ -16,6 +16,8 @@ deploy-dev: build
 logs-dev:
 	sls logs -f $(FUNC) --tail --stage $(STAGE_DEV) --region $(REGION)
 
-run-dev:
+run-local:
+	IS_OFFLINE=true go run ./cmd/lambda/main.go
+
 	
 

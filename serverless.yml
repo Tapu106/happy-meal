@@ -19,6 +19,20 @@ provider:
 
   environment:
     STAGE: ${self:provider.stage}
+    MEALS_TABLE: ${self:service}-meals-${self:provider.stage}
+
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:PutItem
+            - dynamodb:DeleteItem
+            - dynamodb:GetItem
+            - dynamodb:Query
+            - dynamodb:Scan
+          Resource:
+            - !GetAtt MealsTable.Arn
 
 
 params:
@@ -52,3 +66,17 @@ functions:
       - http:
           method: ANY
           path: /{proxy+}
+
+resources:
+  Resources:
+    MealsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:provider.environment.MEALS_TABLE}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH

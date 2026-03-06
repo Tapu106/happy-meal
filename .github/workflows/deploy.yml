@@ -3,8 +3,8 @@ name: Build & Deploy (Go Lambda)
 on:
   push:
     branches:
-      - dev
-      - main
+      - your-dev-branch-here
+      - your-main-branch-here
   workflow_dispatch:
 
 permissions:

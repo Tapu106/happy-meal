@@ -1,8 +1,15 @@
 package main
 
-import "github.com/aws/aws-lambda-go/lambda"
-import "github.com/fconnect/storylens-banglapaper/internal/lib"
+import (
+	"github.com/fconnect/happy-meal/internal/routes"
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
-	lambda.Start(lib.RequestHandler)
+	server := gin.Default()
+
+	routes.RegisterRoutes(server)
+
+	server.Run(":8080")
+
 }
